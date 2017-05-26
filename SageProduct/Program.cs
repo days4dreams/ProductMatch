@@ -11,7 +11,7 @@ namespace SageProduct
         static void Main(string[] args)
         {
             // From Dave
-            // List<SageProduct> products = new List<SageProduct>();
+            //List<SageProduct> products = new List<SageProduct>();
             //products.Add(new SageOne());
             //add sage1000
             //add sage live
