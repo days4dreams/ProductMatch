@@ -10,6 +10,12 @@ namespace SageProduct
     {
         static void Main(string[] args)
         {
+            // From Dave
+            // List<SageProduct> products = new List<SageProduct>();
+            //products.Add(new SageOne());
+            //add sage1000
+            //add sage live
+
             Console.WriteLine("Welcome to Sage Solution Finder");
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine("I will help you to find the best Sage solution for your business.");
@@ -42,28 +48,35 @@ namespace SageProduct
             string coOutput = userCompany.CalculateProduct(coEmployees, coInternational);
             //call function to calcultae suitable product - should push through inputs
 
-            SageOne sageOne = new SageOne("Sage One", true, false);
-            SageLive sageLive = new SageLive("Sage Live", true, true);
-            Sage1000 sage1000 = new Sage1000("Sage 1000", false, true);
+            SageOne sageOne = new SageOne("Sage One", true, false, "£9.99 per month");
+            SageLive sageLive = new SageLive("Sage Live", true, true, "£65 per month");
+            Sage1000 sage1000 = new Sage1000("Sage 1000", false, true, "£400 per month");
+
+            //From Dave
+            //SageProduct chosenProduct = products.Where(p => p.productName == userCompany.productOutput).First();
+            //chosenProduct.outputProductDetails();
 
             if (userCompany.productOutput == "Sage One")
             {
                 sageOne.outputProductDetails();
-                sageOne.ProductSummary(sageOne.productName, sageOne.productPrice, sageOne.productFeatures);
+                string outsaid = sageOne.ProductSummary(sageOne.productName, sageOne.productPrice, sageOne.productFeatures);
+                Console.WriteLine(outsaid);
                 //call the output method from Sage One class
                 //call the summary method from Product class
             }
             else if (userCompany.productOutput == "Sage Live")
             {
                 sageLive.outputProductDetails();
-                sageLive.ProductSummary(sageLive.productName, sageLive.productPrice, sageLive.productFeatures);
+                string outsaid = sageLive.ProductSummary(sageLive.productName, sageLive.productPrice, sageLive.productFeatures);
+                Console.WriteLine(outsaid);
                 //call the output method from Sage Live class
                 //call the summary method from Product class
             }
             else if (userCompany.productOutput == "Sage 1000")
             {
                 sage1000.outputProductDetails();
-                sage1000.ProductSummary(sage1000.productName, sage1000.productPrice, sage1000.productFeatures);
+                string outsaid = sage1000.ProductSummary(sage1000.productName, sage1000.productPrice, sage1000.productFeatures);
+                Console.WriteLine(outsaid);
                 //call the output method from Sage 1000 class
                 //call the summary method from Product class
             }

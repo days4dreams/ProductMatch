@@ -13,7 +13,7 @@ namespace SageProduct
         public string productPrice = "";
         public string productFeatures = string.Empty;
         public string productSum = string.Empty;
-        public string[] productOption = { "Sage One", "Sage Live", "Sage 1000" };
+        //public string[] productOption = { "Sage One", "Sage Live", "Sage 1000" };
         public bool productIsOnline = true;
         public bool productIsInternational = true;
         //here we declare variables that are shared by the constructors, properties, and child classes
@@ -61,24 +61,24 @@ namespace SageProduct
         /* end properties */
 
         /* start constructors */
-        public SageProduct(string productName, bool productIsOnline, bool productIsInternational)
+        public SageProduct(string productName, bool productIsOnline, bool productIsInternational, string productPrice)
         {
             this.productName = productName;
             this.productIsOnline = productIsOnline;
             this.productIsInternational = productIsInternational;
+            this.productPrice = productPrice;
         }
         //this is a constructor, for the Product object. It requires a Name, Size and statuses to be input.
         /* end constructors */
 
         public string ProductSummary(string productName, string productPrice, string productFeatures)
         {
-            productSum = "\n Product Summary\n Product Name: ";
-            Console.WriteLine(this.productName);
-            Console.WriteLine("\n Monthly Cost: ");
-            Console.WriteLine(this.productPrice);
-            Console.WriteLine("\n Product Features: " + this.productFeatures);
+            return "\n Product Summary\n Product Name: " + this.productName + "\n Monthly Cost: " + this.productPrice + "\n Product Features: " + this.productFeatures;
+            //Console.WriteLine("\n Monthly Cost: ");
+            //Console.WriteLine(this.productPrice);
+            //Console.WriteLine("\n Product Features: " + this.productFeatures);
 
-            return productSum;
+           // return productSum;
 
         }
         //this function produces a summary of the the product

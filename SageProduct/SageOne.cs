@@ -8,14 +8,38 @@ namespace SageProduct
 {
     class SageOne : SageProduct
     {
-        public SageOne(string productName, bool productIsOnline, bool productIsInternational) : base(productName, productIsOnline, productIsInternational)
+        public SageOne(string productName, bool productIsOnline, bool productIsInternational, string productPrice) : base(productName, productIsOnline, productIsInternational, productPrice)
         {
         }
 
-        public string productPrice = "£19.00 per month";
-        public string productName = "Sage One";
-        public string productFeatutes = "Available in the cloud";
+        public string sageOnePrice = "£19.00 per month";
+        public string sageOneName = "Sage One";
+        public string sageOneFeature = "Available in the cloud";
 
+
+        public string productPrice
+        {
+            get { return this.sageOnePrice; }
+            set { this.sageOnePrice = value; }
+        }
+        //we use the string productPrice globally in the Product class. Here we set it for Sage One as
+        //equal to sageOnePrice
+
+        public string productName
+        {
+            get { return this.sageOneName; }
+            set { this.sageOneName = value; }
+        }
+        //we use the string productName globally in the Product class. Here we set it for Sage One as
+        //equal to sageOneName
+
+        public string productFeatures
+        {
+            get { return this.sageOneFeature; }
+            set { this.sageOneFeature = value; }
+        }
+        //we use the string productFeatures globally in the Product class. Here we set it for Sage One as
+        //equal to sageOneFeature
         //public string productFeatures { get; set; }
         // properties of the SageOne class
 

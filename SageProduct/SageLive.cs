@@ -8,14 +8,39 @@ namespace SageProduct
 {
     class SageLive : SageProduct
     {
-        public SageLive(string productName, bool productIsOnline, bool productIsInternational) : base(productName, productIsOnline, productIsInternational)
+        public SageLive(string productName, bool productIsOnline, bool productIsInternational, string productPrice) : base(productName, productIsOnline, productIsInternational, productPrice)
         {
         }
-        public string productPrice = "£2.50 per month";
-        public string productName = "Sage Live";
-        public string productFeatutes = "Integrates with Salesforce Applications";
+        public string sageLivePrice = "£2.50 per month";
+        public string sageLiveName = "Sage Live";
+        public string sageLiveFeature = "Integrates with Salesforce Applications";
 
-        // properties of the SageOne class
+
+        public string productPrice
+        {
+            get { return this.sageLivePrice; }
+            set { this.sageLivePrice = value; }
+        }
+        //we use the string productPrice globally in the Product class. Here we set it for Sage Live as
+        //equal to sageLivePrice
+
+        public string productName
+        {
+            get { return this.sageLiveName; }
+            set { this.sageLiveName = value; }
+        }
+        //we use the string productName globally in the Product class. Here we set it for Sage Live as
+        //equal to sageLiveName
+
+        public string productFeatures
+        {
+            get { return this.sageLiveFeature; }
+            set { this.sageLiveFeature = value; }
+        }
+        //we use the string productFeatures globally in the Product class. Here we set it for Sage Live as
+        //equal to sageLiveFeature
+
+        // properties of the SageLive class
 
         public override void outputProductDetails()
         {

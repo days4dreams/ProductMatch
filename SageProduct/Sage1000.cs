@@ -8,13 +8,43 @@ namespace SageProduct
 {
     class Sage1000 : SageProduct
     {
-        public Sage1000(string productName, bool productIsOnline, bool productIsInternational) : base (productName, productIsOnline, productIsInternational)
+        public Sage1000(string productName, bool productIsOnline, bool productIsInternational, string productPrice) : base (productName, productIsOnline, productIsInternational, productPrice)
         {
         }
-        public string productPrice = "£49.00 per month";
-        public string productName = "Sage 1000";
-        public string productFeatutes = "Supports up to 200 users";
+
+        public string sage1000Price = "£49.00 per month";
+        public string sage1000Name = "Sage 1000";
+        public string sage1000Feature = "Supports up to 200 users";
         // properties of the Sage1000 class
+
+        public string productPrice
+        {
+            get { return this.sage1000Price; }
+            set { this.sage1000Price = value; }
+        }
+        //we use the string productPrice globally in the Product class. Here we set it for Sage 100 as
+        //equal to sage100Price
+
+        public string productName
+        {
+            get { return this.sage1000Name; }
+            set { this.sage1000Name = value; }
+        }
+        //we use the string productName globally in the Product class. Here we set it for Sage 100 as
+        //equal to sage100Name
+
+        public string productFeatures
+        {
+            get { return this.sage1000Feature; }
+            set { this.sage1000Feature = value; }
+        }
+        //we use the string productFeatures globally in the Product class. Here we set it for Sage 100 as
+        //equal to sage100Feature
+
+
+
+        /*end properties*/
+
 
         public override void outputProductDetails()
         {
