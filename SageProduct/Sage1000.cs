@@ -49,7 +49,8 @@ namespace SageProduct
         public override void outputProductDetails()
         {
             string info = "Sage 1000 is designed for large businesses who trade in multiple countires!";
-            Console.WriteLine(info);
+            string summary = "\n Product Summary\n Product Name: " + this.productName + "\n Monthly Cost: " + this.productPrice + "\n Product Features: " + this.productFeatures;
+            Console.WriteLine(info + summary);
         }
         // methods of the outputProductDetails
         // using override keyword to set the outputProductDetails functions actions for Sage 1000 (which primarily

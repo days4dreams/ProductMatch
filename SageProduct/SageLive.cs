@@ -45,7 +45,8 @@ namespace SageProduct
         public override void outputProductDetails()
         {
             string info = "Sage Live is an online solution for small to medium international businesses!";
-            Console.WriteLine(info);
+            string summary = "\n Product Summary\n Product Name: " + this.productName + "\n Monthly Cost: " + this.productPrice + "\n Product Features: " + this.productFeatures;
+            Console.WriteLine(info + summary);
         }
         // methods of the outputProductDetails
         // using override keyword to set the outputProductDetails functions actions for Sage Live (which primarily

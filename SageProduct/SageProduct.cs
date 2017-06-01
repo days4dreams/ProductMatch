@@ -74,12 +74,6 @@ namespace SageProduct
         public string ProductSummary(string productName, string productPrice, string productFeatures)
         {
             return "\n Product Summary\n Product Name: " + this.productName + "\n Monthly Cost: " + this.productPrice + "\n Product Features: " + this.productFeatures;
-            //Console.WriteLine("\n Monthly Cost: ");
-            //Console.WriteLine(this.productPrice);
-            //Console.WriteLine("\n Product Features: " + this.productFeatures);
-
-           // return productSum;
-
         }
         //this function produces a summary of the the product
         /* end functions */

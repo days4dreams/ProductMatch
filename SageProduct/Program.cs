@@ -11,10 +11,10 @@ namespace SageProduct
         static void Main(string[] args)
         {
             // From Dave
-            //List<SageProduct> products = new List<SageProduct>();
-            //products.Add(new SageOne());
-            //add sage1000
-            //add sage live
+            List<SageProduct> products = new List<SageProduct>();
+            products.Add(new SageOne("Sage One", true, false, "£9.99 per month"));
+            products.Add(new SageLive("Sage Live", true, true, "£65 per month"));
+            products.Add(new Sage1000("Sage 1000", false, true, "£400 per month"));
 
             Console.WriteLine("Welcome to Sage Solution Finder");
             System.Threading.Thread.Sleep(1000);
@@ -37,7 +37,7 @@ namespace SageProduct
             string answerInt = Console.ReadLine();
             bool coInternational;
             coInternational = yesAnswers.Contains(answerInt.ToLower());
-
+            //collect information regarding needs from the user
 
             Company userCompany = new Company(coEmployees, coName, coOnline, coInternational);
             //create a new company -should be from user input
@@ -48,14 +48,13 @@ namespace SageProduct
             string coOutput = userCompany.CalculateProduct(coEmployees, coInternational);
             //call function to calcultae suitable product - should push through inputs
 
-            SageOne sageOne = new SageOne("Sage One", true, false, "£9.99 per month");
-            SageLive sageLive = new SageLive("Sage Live", true, true, "£65 per month");
-            Sage1000 sage1000 = new Sage1000("Sage 1000", false, true, "£400 per month");
+            //Dave
+            SageProduct chosenProduct = products.Where(p => p.productName == userCompany.productOutput).First();
+            chosenProduct.outputProductDetails();
+            //pass the type of product I have been assigned to the function outputProductDetails
+            //using the override method to superseed the Objects standard method
 
-            //From Dave
-            //SageProduct chosenProduct = products.Where(p => p.productName == userCompany.productOutput).First();
-            //chosenProduct.outputProductDetails();
-
+            /* No longer need if / else statement below as using 'Where' keyword
             if (userCompany.productOutput == "Sage One")
             {
                 sageOne.outputProductDetails();
@@ -92,9 +91,6 @@ namespace SageProduct
             {
                 sage1000.outputProductDetails();
             }
-             //pass the type of product I have been assigned to the function outputProductDetails
-             //use typeof keyword and GetType object method to determine if/else ruling
-             //using the override method to superseed the Objects standard method
              */
 
             Console.ReadKey();
